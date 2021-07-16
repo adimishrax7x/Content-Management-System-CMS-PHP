@@ -29,11 +29,10 @@ if(isset($_POST['add_user'])){
         
         validateQuery($insert_user_query_admin);
         
-       
-
+        echo "USER ADDED" . "<a href='users.php'>&nbsp VIEW USERS</a>" ;
 }
 
-?>
+?><a href=""></a>
 
 
 <form action="" method="post" enctype='multipart/form-data'>
@@ -48,28 +47,6 @@ if(isset($_POST['add_user'])){
     <input type="text" class="form-control" name="user_lastname" placeholder="Enter Last Name ">
 </div>
 
-<!-- <div class="form-group">
-    <label for="user_role">Enter user Role :</label>
-<select class="form-control" name="user_role" >
-    <option value="none" selected disabled hidden>
-          Select a category 
-    <?php
-    //     $query="SELECT * from users";
-    //     $select_user_roles = mysqli_query($connection,$query); 
-    //     validateQuery($select_user_roles);       
-
-                               
-    //     while ($row = mysqli_fetch_assoc($select_user_roles)){
-    //     $user_role=$row['user_role'];
-    //     $user_id=$row['user_id'];
-    
-    //     echo "<option value='{$user_id}'>{$user_role}</option>";
-    // }
-    ?>
- 
-
-</select>
--->
  <div class="form-group">
     <label for="user_image">Upload Image</label>
     <input type="file" class="form-control" name="user_image"  >

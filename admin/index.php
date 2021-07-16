@@ -129,9 +129,9 @@
     <?php
                 $query="SELECT * from categories";
                 $select_all_categories = mysqli_query($connection,$query);
-
                 $categories_count=mysqli_num_rows($select_all_categories);
 
+                
 
                ?>
 
@@ -162,7 +162,25 @@
 
 
                 <!-- /.row -->
+                <?php
+                $query="SELECT * from posts where post_status='draft'";
+                $select_all_draft_posts = mysqli_query($connection,$query);
+                $post_draft_count=mysqli_num_rows($select_all_draft_posts);
+                
+                $query="SELECT * from posts where post_status='published'";
+                $select_all_published_posts = mysqli_query($connection,$query);
+                $post_published_count=mysqli_num_rows($select_all_published_posts);
 
+                $query="SELECT * from comments where comment_status='APPROVED'";
+                $select_all_APPROVED_comments = mysqli_query($connection,$query);
+                $APPROVED_comments_count=mysqli_num_rows($select_all_APPROVED_comments);
+
+                $query="SELECT * from users where user_role='SUSCRIBER'";
+                $select_all_SUSCRIBERS= mysqli_query($connection,$query);
+                $SUSCRIBERS_count=mysqli_num_rows($select_all_SUSCRIBERS);
+
+                
+                ?>
 
                 <div class="row">
 
@@ -178,11 +196,17 @@
           <?php
           
 
-          //
+          $element_text=['ALL POSTS','ACTIVE POSTS','PUBLISHED POSTS','COMMENTS','APPROVED COMMENTS','USERS','SUSCRIBERS','CATEGORIES'];
+          $element_count=[$post_count,$post_draft_count, $post_published_count, $comment_count ,$APPROVED_comments_count,$user_count,$SUSCRIBERS_count,$categories_count];
 
+          for($i=0; $i<7;$i++){
+
+           echo "['{$element_text[$i]}'". ",". "{$element_count[$i]}],";
+
+          }
           ?>
 
-          ['Post', 1000],
+        // ['Post', 1000]
 
         ]);
 

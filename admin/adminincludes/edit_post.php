@@ -66,10 +66,7 @@
                         $update_categories = mysqli_query($connection,$query); 
                         validateQuery($update_categories); 
 
-                        // $query.="('{$post_category_id}','{$post_title}','{$post_author}',now(),'{$post_image}','{$post_content}','{$post_tags}','{$post_comment_count}','{$post_status}')";
-                        // (post_category_id,post_title,post_author,post_date,post_image,post_content,post_tags,post_comment_count,post_status) ";
-                       
-
+                        echo "<div class='bg-success'>USER UPDATED" . "<a  href='post.php'>&nbsp VIEW POSTS</a> </div>" ;
                     }
 
 ?>
@@ -103,10 +100,25 @@
     </select>
     <!-- <input type="text" class="form-control" value="<?php echo $post_category_id ?>" name="post_category_id" placeholder="Enter Category Id"> -->
 </div>
-
 <div class="form-group">
-    <input type="text" class="form-control" value="<?php echo $post_status ?>" name="post_status" placeholder="Enter Post Status">
-</div>
+
+<select name="post_status">
+
+
+
+<?php 
+if($post_status==='published'){
+    echo "<option value='published'>published</option>"; 
+   echo " <option value='Draft'>Draft</option>";
+}else{
+    echo "<option value='published'>published</option>";
+    echo " <option value='Draft'>Draft</option>";
+}
+
+?>
+
+</select>
+</div> 
 
 <div class="form-group">
     <label for="post_image">Upload Image</label>
