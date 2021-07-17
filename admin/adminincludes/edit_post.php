@@ -5,9 +5,6 @@
             if(isset($_GET['p_id'])){
                 $the_post_id= $_GET['p_id'];
 
-
-           
-
                         $query="SELECT * from posts where post_id={$the_post_id}";
                         $select_posts_Id_query = mysqli_query($connection,$query);
 

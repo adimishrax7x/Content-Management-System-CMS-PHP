@@ -23,6 +23,7 @@ if(isset($_POST['create_post'])){
         $insert_post_query_admin = mysqli_query($connection,$query);    
         
         validateQuery($insert_post_query_admin);
+        echo "<div class='bg-success'>USER ADDED" . "<a  href='post.php'>&nbsp VIEW POSTS</a> </div>" ;
         
        
 
@@ -63,6 +64,7 @@ if(isset($_POST['create_post'])){
 <br>
 <br>
 <div class="form-group">
+
     <input type="text" class="form-control" name="post_status" placeholder="Enter Post Status">
 </div>
 
