@@ -42,15 +42,29 @@ if(isset($_POST['edit_user'])){
 
         // move_uploaded_file($post_image_temp,"../images/$post_image");
 
-        $query="INSERT INTO users(user_name,user_email,user_password,user_firstname,user_lastname,user_role) ";
-        $query.="VALUES('{$user_name}','{$user_email}','{$user_password}','{$user_firstname}','{$user_lastname}','{$user_role}')";
+        // $query="INSERT INTO users(user_name,user_email,user_password,user_firstname,user_lastname,user_role) ";
+        // $query.="VALUES('{$user_name}','{$user_email}','{$user_password}','{$user_firstname}','{$user_lastname}','{$user_role}')";
+
+
+        $query ="SELECT user_randSalt from users";
+        $select_randSalt_query=mysqli_query($connection,$query);
+    
+        if(!$select_randSalt_query){
+    
+            die("Query Failed  ".mysqli_error($connection));
+    
+        }
+    
+        $row=mysqli_fetch_array($select_randSalt_query);
+        $salt=$row['user_randSalt'];
+        $hashed_password=crypt($user_password,$salt);
 
         $query = "UPDATE users SET ";
         $query .="user_firstname='{$user_firstname}' ,";
         $query .="user_lastname='{$user_lastname}' ,";
         $query .="user_name='{$user_name}' ,";
         $query .="user_email='{$user_email}' ,";
-        $query .="user_password='{$user_password}' ,";
+        $query .="user_password='{$hashed_password}' ,";
         $query .="user_role='{$user_role}' ";
         $query.="WHERE user_id='{$the_user_id}' ";
 

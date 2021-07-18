@@ -38,37 +38,8 @@
                                     echo "<td>$user_lastname</td>";
                                     echo "<td>$user_email</td>";
                                     echo "<td>$user_role</td>";
-                                    //echo "<td>$user_randSalt</td>";
 
-
-                                    // $query="SELECT * from categories where cat_id={$post_category_id}";
-                                    // $select_categories = mysqli_query($connection,$query); 
-                                    // validateQuery($select_categories);       
-                            
-                                                           
-                                    // while ($row = mysqli_fetch_assoc($select_categories)){
-                                    // $cat_title=$row['cat_title'];
-                                    // $cat_id=$row['cat_id'];
-
-                                    // echo "<td>$cat_title</td>";
-
-
-
-                                    // echo "<td>$comment_status</td>";
-
-                                    // $query="SELECT * from posts where post_id=$comment_post_id";
-                                    // $select_post_id_query = mysqli_query($connection,$query); 
-                                        
-
-                                    // while ($row = mysqli_fetch_assoc($select_post_id_query)){
-                                    //     $post_id = $row['post_id'];
-                                    //     $post_title=$row['post_title'];
-
-                                    //     echo "<td><a href='../post.php?p_id={$post_id}'>$post_title</a></td>";
-
-                                    
-
-                                    // echo "<td>$comment_date</td>";                                  
+                             
                                     echo "<td><a href='users.php?change_to_admin=$user_id'>Change to admin</a></td>";
                                     echo "<td><a href='users.php?change_to_suscriber=$user_id'>Change to Suscriber</a></td>";
                                     echo "<td><a href='users.php?delete=$user_id'>Delete</a></td>";
@@ -76,7 +47,7 @@
 
                                     
 
-                                    // //echo "<td>$post_comment_count</td>";
+                              
 
 
                                     echo "</tr>";
