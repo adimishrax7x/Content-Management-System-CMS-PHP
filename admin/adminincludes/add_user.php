@@ -2,7 +2,7 @@
 
 if(isset($_POST['add_user'])){
     
-    //$user_id= $_POST['user_id'];
+   
     $user_role= $_POST['user_role'];
 
     $user_name = $_POST['user_name'];
@@ -11,19 +11,12 @@ if(isset($_POST['add_user'])){
 
     $user_firstname= $_POST['user_firstname'];
     $user_lastname= $_POST['user_lastname'];
-    
-   // $user_randSalt=$_POST['user_randSalt'];
-
      $user_image= $_FILES['user_image']['name'];
-    // $post_image_temp=$_FILES['post_image']['tmp_name'];
-
    
-    
-
-        // move_uploaded_file($post_image_temp,"../images/$post_image");
+     $password=password_hash($user_password,PASSWORD_BCRYPT,array('cost'=> 10));
 
         $query="INSERT INTO users(user_name,user_email,user_password,user_firstname,user_lastname,user_role) ";
-        $query.="VALUES('{$user_name}','{$user_email}','{$user_password}','{$user_firstname}','{$user_lastname}','{$user_role}')";
+        $query.="VALUES('{$user_name}','{$user_email}','{$password}','{$user_firstname}','{$user_lastname}','{$user_role}')";
 
         $insert_user_query_admin = mysqli_query($connection,$query);    
         

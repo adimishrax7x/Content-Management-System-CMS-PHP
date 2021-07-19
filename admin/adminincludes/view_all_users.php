@@ -3,7 +3,7 @@
                                 <tr>
                                     <td>Id</td>
                                     <td>Username</td>
-                                    <td>Password</td>
+                                    <!-- <td  style="width:10px">Password</td> -->
                                     <td>FirstName</td>
                                     <td>LastName</td>
                                     <td>Email</td>
@@ -33,7 +33,7 @@
 
                                     echo "<td>$user_id</td>";
                                     echo "<td>$user_name</td>";
-                                    echo "<td>$user_password</td>";
+                                    //echo "<td >$user_password</td>";
                                     echo "<td>$user_firstname</td>";
                                     echo "<td>$user_lastname</td>";
                                     echo "<td>$user_email</td>";

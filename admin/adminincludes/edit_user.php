@@ -31,29 +31,18 @@ if(isset($_POST['edit_user'])){
 
     $user_firstname= $_POST['user_firstname'];
     $user_lastname= $_POST['user_lastname'];
-    
-   // $user_randSalt=$_POST['user_randSalt'];
+
 
      $user_image= $_FILES['user_image']['name'];
-    // $post_image_temp=$_FILES['post_image']['tmp_name'];
 
-   
+        // $query ="SELECT user_randSalt from users";
+        // $select_randSalt_query=mysqli_query($connection,$query);
     
-
-        // move_uploaded_file($post_image_temp,"../images/$post_image");
-
-        // $query="INSERT INTO users(user_name,user_email,user_password,user_firstname,user_lastname,user_role) ";
-        // $query.="VALUES('{$user_name}','{$user_email}','{$user_password}','{$user_firstname}','{$user_lastname}','{$user_role}')";
-
-
-        $query ="SELECT user_randSalt from users";
-        $select_randSalt_query=mysqli_query($connection,$query);
+        // if(!$select_randSalt_query){
     
-        if(!$select_randSalt_query){
+        //     die("Query Failed  ".mysqli_error($connection));
     
-            die("Query Failed  ".mysqli_error($connection));
-    
-        }
+        // }
     
         $row=mysqli_fetch_array($select_randSalt_query);
         $salt=$row['user_randSalt'];
