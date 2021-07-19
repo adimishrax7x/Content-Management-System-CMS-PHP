@@ -43,6 +43,12 @@ audio:not([controls]) {
 template {
   display: none;
 }
+td{
+  width: 100px!important;
+  float: left; /* add this */
+  white-space: nowrap;
+  overflow: hidden!important;
+}
 a {
   background-color: transparent;
 }

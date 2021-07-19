@@ -35,9 +35,9 @@ if(isset($_POST['login'])){
 
         }
 
-        $password=crypt($password,$db_user_password);
-
-        if($username===$db_user_name && $password===$db_user_password){
+       // $password=crypt($password,$db_user_password);
+        //$username===$db_user_name && $password===$db_user_password
+        if(password_verify($password,$db_user_password)){
            //header("Location: ../index.php"); 
             
             $_SESSION['user_name']=$db_user_name;
