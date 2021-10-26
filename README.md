@@ -31,5 +31,5 @@ The Admin page Login is established via sessions. These sessions last in thebrow
 ### Editing Admin informations
 ![img](https://github.com/adimishrax7x/Content-Management-System-CMS-PHP/blob/main/README-imgs/Screenshot%20(680).png)
 
-###Making posts from Admin
+### Making posts from Admin
 ![img](https://github.com/adimishrax7x/Content-Management-System-CMS-PHP/blob/main/README-imgs/Screenshot%20(681).png)
