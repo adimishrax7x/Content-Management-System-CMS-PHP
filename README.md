@@ -2,7 +2,7 @@
 A content management system, often abbreviated as CMS, is software that helps users create, manage, and modify content on a website without the need for specialized technical knowledge.
 
 ## HOMEPAGE
-All The content gets displayed with it's text capped to show only 100 characters(int the homepage only) using array substr function  
+All The content gets displayed with it's text capped to show only 100 characters(int the homepage only) using array substr() function  
 ![img](https://github.com/adimishrax7x/Content-Management-System-CMS-PHP/blob/main/README-imgs/Screenshot%20(673).png)
 
 ## Comment module  
